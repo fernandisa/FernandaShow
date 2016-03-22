@@ -3,30 +3,32 @@
 <%@page import="modelo.Categoria"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-//txtnome é o NAME que eu coloquei no input na tela 
-//anterior
-String msg="";
-//String b = request.getParameter("txtB");
-//String c = request.getParameter("txtC");
-//String d = request.getParameter("txtD");
-String certa = request.getParameter("txtCerta");
-String enunciado = request.getParameter("txtEnunciado");
-Integer nivel = Integer.parseInt(request.getParameter("txtNivel")); // conversao
-String a = request.getParameter("txtA");
-String b = request.getParameter("txtB");
-String c = request.getParameter("txtC");
-String d = request.getParameter("txtD");
-Integer id = Integer.parseInt(request.getParameter("selCategoria")); // conversao  chave estrangeira .. nome da categoria
+ String msg="";
+    
+    if(request.getParameter("txtNome") == null )
+    {
+        response.sendRedirect("list.jsp");
+    }
+    else
+    {
+        String certa = request.getParameter("txtCerta");
+        String enunciado = request.getParameter("txtEnunciado");
+        Integer nivel = Integer.parseInt(request.getParameter("txtNivel")); // conversao
+        String a = request.getParameter("txtA");
+        String b = request.getParameter("txtB");
+        String c = request.getParameter("txtC");
+        String d = request.getParameter("txtD");
+        Integer id = Integer.parseInt(request.getParameter("selCategoria")); // conversao  chave estrangeira .. nome da categoria
 
 
 
 
-PerguntaDAO dao = new PerguntaDAO();
-Pergunta obj = new Pergunta();
+        PerguntaDAO dao = new PerguntaDAO();
+        Pergunta obj = new Pergunta();
 //Montar as FK - chave estrangeira
 
-Categoria objCategoria = new Categoria();
-objCategoria.setId(id);
+        Categoria objCategoria = new Categoria();
+        objCategoria.setId(id);
 
         
 //populando o obj disciplina
@@ -34,9 +36,9 @@ objCategoria.setId(id);
 //obj.setB(b);
 //obj.setC(c);
 //obj.setD(d);
-obj.setCerta(certa);
-obj.setEnunciado(enunciado);
-obj.setNivel(nivel);
+        obj.setCerta(certa);
+        obj.setEnunciado(enunciado);
+        obj.setNivel(nivel);
 obj.setA(a);
 obj.setB(b);
 obj.setC(c);
@@ -53,7 +55,7 @@ obj.setCategoria(objCategoria);
            {
                 msg = "Erro ao cadastrar registro";
           }
-  
+    }
 
 String enunciado1 = request.getParameter("txtEnunciado");
 

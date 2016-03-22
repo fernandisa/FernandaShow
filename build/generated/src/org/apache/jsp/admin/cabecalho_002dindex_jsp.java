@@ -93,6 +93,7 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("          <a href=\"categoria_1/list.jsp\" class=\"mdl-layout__tab\">Categoria</a>\n");
       out.write("          <a href=\"jogador/list.jsp\" class=\"mdl-layout__tab\">Jogador</a>\n");
       out.write("          <a href=\"pergunta_1/list.jsp\" class=\"mdl-layout__tab\">Pergunta</a>\n");
+      out.write("          \n");
       out.write("        </div>\n");
       out.write("      </header>\n");
       out.write("      <main class=\"mdl-layout__content\">\n");
