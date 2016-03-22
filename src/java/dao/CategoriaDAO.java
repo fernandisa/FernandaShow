@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.util.List;
@@ -75,7 +74,7 @@ public class CategoriaDAO {
             em.close();
         }
     }
-    public Categoria buscarPorChavePrimaria (Long chave)
+    public Categoria buscarPorChavePrimaria (Integer chave)
     {
         return em.find(Categoria.class,chave);
     }

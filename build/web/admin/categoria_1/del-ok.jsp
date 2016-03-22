@@ -10,12 +10,12 @@
     else
     {
         
-        Long id = Long.parseLong(request.getParameter("id")); // conversao
+        Integer id = Integer.parseInt(request.getParameter("id")); // conversao
         
         CategoriaDAO dao = new CategoriaDAO();
         //buscar o registro pela chave primária
         Categoria obj = dao.buscarPorChavePrimaria(id);
-        // Excluir o livro buscado
+        // Excluir o jogador buscado
         if(obj!=null)
         {
             dao.excluir(obj);
@@ -27,13 +27,15 @@
         }
         
     }
+String id = request.getParameter("txtId");
 %>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text ">
             <h4>Categoria - Excluir</h4>
-            <p>Registro excluído com sucesso.</p>
+            <%=msg%>.<br />
+            Id:<%=id%><br />
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>
@@ -43,4 +45,5 @@
 </section>
 
 <%@include file="../rodape.jsp"%>
+
 

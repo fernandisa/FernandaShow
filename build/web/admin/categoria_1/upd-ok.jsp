@@ -2,13 +2,13 @@
 <%@page import="dao.CategoriaDAO"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-if(request.getParameter("txtNome")==null)
+if(request.getParameter("txtName")==null)
 {
     response.sendRedirect("list.jsp");
     return;
 }
-        Long id = Long.parseLong(request.getParameter("txtId")); // conversao
-        String nome = request.getParameter("txtNome");
+        Integer id = Integer.parseInt(request.getParameter("txtId")); // conversao
+        String nome = request.getParameter("txtName");
         
         
 
@@ -28,21 +28,15 @@ if(obj == null)
     response.sendRedirect("list.jsp");
     return;
 }
-
-
 //Atualizar as demais informações enviadas
 obj.setNome(nome);
-
 // chamo a atualizar
-
-
-
 dao.alterar(obj);
 
 
 //txtnome é o NAME que eu coloquei no input na tela 
 //anterior
-String nome1 = request.getParameter("txtNome");
+String nome1 = request.getParameter("txtName");
 %>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">

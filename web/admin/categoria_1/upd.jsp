@@ -2,7 +2,7 @@
 <%@page import="dao.CategoriaDAO"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-    if(request.getParameter("nome") == null)
+    if(request.getParameter("id") == null )
     {
       response.sendRedirect("list.jsp"); 
       //para a execução aqui
@@ -10,7 +10,7 @@
     }
      //Buscar o registro(categoria) a partir da sua
         //chave primária, nesse caso o id
-        Long id = Long.parseLong(request.getParameter("id")); // conversao
+        Integer id = Integer.parseInt(request.getParameter("id")); // conversao
         CategoriaDAO dao = new CategoriaDAO();
         Categoria obj = dao.buscarPorChavePrimaria(id);
         //verificar se o registro existe, se não existir, volta pra lista
@@ -36,14 +36,21 @@
                     primeira div -- área que ocupará o campo de formulário
                     segunda div -- campo de texto e label 
                 -->
-                <div class="mdl-cell--12-col"> 
+              <div class="mdl-cell--12-col"> 
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+                        <input class="mdl-textfield__input" type="text" name="txtId" value="<%=obj.getId()%>" readonly="readonly" required  id="txtNome" />
+                        <label class="mdl-textfield__label" for="txtId">Id</label>
+                    </div>
+              </div>
+              <%-- o readonly n permite ao usuario tocar nesse campo --%>
+              <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" name="txtName" value="<%=obj.getNome()%>"  required  id="txtNome" />
-                        <label class="mdl-textfield__label" for="txtNome">Nome</label>
+                        <label class="mdl-textfield__label" for="txtName">Nome</label>
                     </div>
-                </div>
-                
-              
+              </div>
+                  
                 <div class="mdl-cell--12-col">
                     
                     <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">

@@ -12,10 +12,6 @@
     }
   
     Integer id = Integer.parseInt(request.getParameter("id"));
-    
-    
-
-
 
     PerguntaDAO dao = new PerguntaDAO();
     Pergunta obj = dao.buscarPorChavePrimaria(id);
@@ -39,10 +35,8 @@
         <div class="mdl-card__supporting-text">
             <h4>Pergunta - Atualizar</h4>
             <form action="upd-ok.jsp" method="post">
-                <!-- 
-                    primeira div -- área que ocupará o campo de formulário
-                    segunda div -- campo de texto e label 
-                -->
+               
+              <%-- o readonly n permite ao usuario tocar nesse campo --%>
                 
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
