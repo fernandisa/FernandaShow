@@ -18,7 +18,7 @@
                 </div>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="txtSenha" required  id="txtNome" />
+                        <input class="mdl-textfield__input" type="password" name="txtSenha" required  id="txtNome" />
                         <label class="mdl-textfield__label" for="txtSenha">Senha</label>
                     </div>
                 </div>
