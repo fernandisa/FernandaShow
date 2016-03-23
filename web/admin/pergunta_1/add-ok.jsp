@@ -5,7 +5,7 @@
 <%
  String msg="";
     
-    if(request.getParameter("txtNome") == null )
+    if(request.getParameter("txtEnunciado") == null ||request.getParameter("txtCerta") == null || request.getParameter("txtNivel") == null )
     {
         response.sendRedirect("list.jsp");
     }
@@ -39,22 +39,21 @@
         obj.setCerta(certa);
         obj.setEnunciado(enunciado);
         obj.setNivel(nivel);
-obj.setA(a);
-obj.setB(b);
-obj.setC(c);
-obj.setD(d);
+        obj.setA(a);
+        obj.setB(b);
+        obj.setC(c);
+        obj.setD(d);
+        obj.setCategoria(objCategoria);
 
-obj.setCategoria(objCategoria);
-
- try
-           {   
-               dao.incluir(obj);
-               msg = "Registro cadastrado com sucesso";
-          }
-            catch(Exception ex)
-           {
-                msg = "Erro ao cadastrar registro";
-          }
+        try
+        {
+            dao.incluir(obj);
+            msg = "Registro cadastrado com sucesso";
+        }
+        catch(Exception ex)
+        {
+            msg = "Erro ao cadastrar registro";
+        }
     }
 
 String enunciado1 = request.getParameter("txtEnunciado");
