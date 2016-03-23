@@ -3,7 +3,7 @@
 <%@page import="dao.PerguntaDAO"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-if(request.getParameter("txtId")==null)
+if(request.getParameter("txtEnunciado") == null ||request.getParameter("txtCerta") == null || request.getParameter("txtNivel") == null )
 {
     response.sendRedirect("list.jsp");
     return;
@@ -16,51 +16,51 @@ if(request.getParameter("txtId")==null)
         String enunciado = request.getParameter("txtEnunciado");
         String certa = request.getParameter("txtCerta");
         Integer nivel = Integer.parseInt(request.getParameter("txtNivel"));
-        String categoria = request.getParameter("selCategoria");
+        Integer idCategoria = Integer.parseInt(request.getParameter("selCategoria")); // conversao  chave estrangeira .. nome da categoria
         
         
 
-//Buscar o registro pela chave primária
-//Alterar os demais valores (nesse caso apenas Nome)
-//mandar alterar
+        //Buscar o registro pela chave primária
+        //Alterar os demais valores (nesse caso apenas Nome)
+        //mandar alterar
  
-PerguntaDAO dao = new PerguntaDAO();
+        PerguntaDAO dao = new PerguntaDAO();
 
-//busquei o jogador pelo login (registro pela C.Primária)
+        //busquei o jogador pelo login (registro pela C.Primária)
 
-Pergunta obj = dao.buscarPorChavePrimaria(id);
+        Pergunta obj = dao.buscarPorChavePrimaria(id);
      
-            Categoria categoria1 = new Categoria ();
-            categoria1.setNome(categoria);
-            // chamo a atualizar
+        Categoria objCategoria = new Categoria ();
+        objCategoria.setId(idCategoria);
+        // chamo a atualizar
 
-//Se não encontrou o registro volta pra listar 
-if(obj == null)
-{
-    response.sendRedirect("list.jsp");
-    return;
-}
-
-
-//Atualizar as demais informações enviadas
-obj.setA(a);
-obj.setB(b);
-obj.setC(c);
-obj.setD(d);
-obj.setCerta(certa);
-obj.setEnunciado(enunciado);
-obj.setNivel(nivel);
-obj.setId(id);
-// chamo a atualizar
+        //Se não encontrou o registro volta pra listar 
+        if(obj == null)
+        {
+            response.sendRedirect("list.jsp");
+            return;
+        }
 
 
+        //Atualizar as demais informações enviadas
+        obj.setA(a);
+        obj.setB(b);
+        obj.setC(c);
+        obj.setD(d);
+        obj.setCerta(certa);
+        obj.setEnunciado(enunciado);
+        obj.setNivel(nivel);
+        obj.setId(id);
+        // chamo a atualizar
 
-dao.alterar(obj);
 
 
-//txtnome é o NAME que eu coloquei no input na tela 
-//anterior
-String enunciado1 = request.getParameter("txtEnunciado");
+        dao.alterar(obj);
+
+
+        //txtnome é o NAME que eu coloquei no input na tela 
+        //anterior
+        String enunciado1 = request.getParameter("txtEnunciado");
 %>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
