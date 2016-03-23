@@ -5,7 +5,7 @@
 <%@page import="dao.PerguntaDAO"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-  if(request.getParameter("id") == null)
+    if(request.getParameter("id") == null)
     {
         response.sendRedirect("list.jsp");
         return;
@@ -22,8 +22,6 @@
         return;
     }
     
-    
-    
 //Listagem de categorias
     CategoriaDAO cDAO = new CategoriaDAO();
     List<Categoria> cLista = cDAO.listar();
@@ -35,9 +33,7 @@
         <div class="mdl-card__supporting-text">
             <h4>Pergunta - Atualizar</h4>
             <form action="upd-ok.jsp" method="post">
-               
-              <%-- o readonly n permite ao usuario tocar nesse campo --%>
-                
+                <%-- o readonly n permite ao usuario tocar nesse campo --%>
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" name="txtId" value="<%=obj.getId()%>" readonly="readonly" required  id="txtNome" />
@@ -85,21 +81,24 @@
                 -->
                 <div class="mdl-cell--12-col">
                     <div class="mdl-select mdl-js-select mdl-select--floating-label">
-                        <select class="mdl-select__input" id="selCategoria" name="selCategoria" value="<%=obj.getCategoria()%>">
+                        <select class="mdl-select__input" id="selCategoria" name="selCategoria" >
                             <option value="">Selecione a resposta</option>
-                              <%                            //percorrer minha lista de cursos
-                String selected = "";    
-                for (Categoria c : cLista) {
-                     if(c.getNome()== obj.getCategoria().getNome())
-                     {
-                         selected = "selected";
-                     }
-                %>
-                <option value="<%=c.getNome()%>" <%=selected%>><%=c%></option>
-                <%
-                    selected = "";
-                    }
-                %>
+                            <%
+                                //percorrer minha lista de cursos
+                                String selected = "";    
+                                for (Categoria c : cLista) 
+                                {
+                                    if(c.getId() == obj.getCategoria().getId())
+                                    {
+                                        selected = "selected";
+                                    }
+                            %>            
+                <option value="<%=c.getId()%>" <%=selected%>><%=c%></option>
+                            <%
+                                selected = "";
+                            }
+                            %>
+                            
                         </select>
                         <label class="mdl-select__label" for="selCategoria">Exemplo Select</label>
                     </div>
