@@ -14,7 +14,7 @@
             jogador = dao.realizarLogin(login, senha);
             if(jogador !=null)
             {
-                mensagem = "Login OK";
+                session.setAttribute("jogador",jogador);
             }
             else
             { 
