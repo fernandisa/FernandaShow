@@ -1,3 +1,10 @@
+<%
+//Testar se ele está logado
+    if(session.getAttribute("usuarioAdmin") == null)
+    {
+        response.sendRedirect("../login.jsp");
+    }
+%>
 <!doctype html>
 
 <html lang="pt-br">
@@ -51,7 +58,7 @@
           <a href="../categoria_1/list.jsp" class="mdl-layout__tab">Categoria</a>
           <a href="../jogador/list.jsp" class="mdl-layout__tab">Jogador</a>
           <a href="../pergunta_1/list.jsp" class="mdl-layout__tab">Pergunta</a>
-          
+          <a href="ranking_1/list.jsp" class="mdl-layout__tab">Ranking</a>
         </div>
       </header>
       <main class="mdl-layout__content">

@@ -7,7 +7,9 @@
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Gerenciamento de Sistemas</title>
-
+         <div>
+              <p> Admin- <a href="login.jsp?sair=ok">Sair</a> </p>
+          </div>
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -32,6 +34,7 @@
               rel="stylesheet">
         <link rel="stylesheet" href="mdl/material.min.css">
         <link rel="stylesheet" href="mdl/styles.css">
+        <link rel="stylesheet" href="mdl/formulario.css">
        
     </head>
     
@@ -50,7 +53,7 @@
           <a href="categoria_1/list.jsp" class="mdl-layout__tab">Categoria</a>
           <a href="jogador/list.jsp" class="mdl-layout__tab">Jogador</a>
           <a href="pergunta_1/list.jsp" class="mdl-layout__tab">Pergunta</a>
-          
+          <a href="ranking_1/list.jsp" class="mdl-layout__tab">Ranking</a>
         </div>
       </header>
       <main class="mdl-layout__content">

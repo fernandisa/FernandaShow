@@ -33,7 +33,24 @@ public class JogadorDAO {
         }
         
     }
-
+     //O MÉTODO REALIZAR LOGIN RECEBE COMO PARAMETRO
+    //O LOGIN E A SENHA RETORNANDO
+    //O OBJETO DO JOGADOR LOGADO OU NULL (SE NAO ENCONTROU JOGADOR)
+    public Jogador realizarLogin(String login, String senha){
+        TypedQuery<Jogador> query = 
+                em.createNamedQuery("Jogador.realizarLogin", Jogador.class);
+        query.setParameter("login", login);
+        query.setParameter("senha" ,senha);
+        Jogador jogador;
+        try {
+            jogador = query.getSingleResult();
+        }
+        catch (Exception e) {
+            jogador = null;
+        }
+            return null;
+    }
+    
     public List<Jogador> listar() throws Exception {
         return em.createNamedQuery("Jogador.findAll").getResultList();
     }

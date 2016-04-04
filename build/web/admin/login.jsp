@@ -1,24 +1,30 @@
+<%@include file="cabecalho-index.jsp"%>
 <%
-    String msg="";
-    if(request.getParameter("txtLogin") !=null && request.getParameter("txtSenha") !=null)
+    String msg = "";
+    if (request.getParameter("txtLogin")!=null &&
+            request.getParameter("txtSenha")!=null)
     {
-      msg = "Tentou fazer o login";
-      String login = request.getParameter("txtLogin").toString();
-      String senha = request.getParameter("txtSenha").toString();
-      
-      if(login.equals("Admin")&& senha.equals("Admin"))
-      {
-          
-          session.setAttribute("usuarioAdmin", login);
-          
-          response.sendRedirect("index.jsp");
-      }
-      else
-      {
-          msg="Errou";
-      }
+        msg = "Tentou fazer o login";
+        String login = request.getParameter("txtLogin").toString();
+        String senha = request.getParameter("txtSenha").toString();
+        if(login.equals("Admin") && senha.equals("Admin"))
+        {
+           //Crio a Sessão do usuário Admin
+           session.setAttribute("usuarioAdmin", login);
+           //redirecionar para a página inicial
+           response.sendRedirect("index.jsp");
+        }
+        else
+        {
+           msg = "Errou";
+        }
+    
     }
-    %>
+    if(request.getParameter("sair") != null)
+    {
+        session.setAttribute("usuarioAdmin", null);
+    }
+%>
 <html lang="pt-br">
    <head>
         <meta charset="utf-8">
