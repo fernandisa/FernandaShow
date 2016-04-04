@@ -50,7 +50,9 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <meta name=\"description\" content=\"A front-end template that helps you build fast, modern mobile web apps.\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
       out.write("        <title>Gerenciamento de Sistemas</title>\n");
-      out.write("\n");
+      out.write("         <div>\n");
+      out.write("              <p> Admin- <a href=\"login.jsp?sair=ok\">Sair</a> </p>\n");
+      out.write("          </div>\n");
       out.write("        <!-- Add to homescreen for Chrome on Android -->\n");
       out.write("        <meta name=\"mobile-web-app-capable\" content=\"yes\">\n");
       out.write("        <link rel=\"icon\" sizes=\"192x192\" href=\"images/touch/chrome-touch-icon-192x192.png\">\n");
@@ -75,6 +77,7 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("              rel=\"stylesheet\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"mdl/material.min.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"mdl/styles.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"mdl/formulario.css\">\n");
       out.write("       \n");
       out.write("    </head>\n");
       out.write("    \n");
@@ -93,7 +96,7 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("          <a href=\"categoria_1/list.jsp\" class=\"mdl-layout__tab\">Categoria</a>\n");
       out.write("          <a href=\"jogador/list.jsp\" class=\"mdl-layout__tab\">Jogador</a>\n");
       out.write("          <a href=\"pergunta_1/list.jsp\" class=\"mdl-layout__tab\">Pergunta</a>\n");
-      out.write("          \n");
+      out.write("          <a href=\"ranking_1/list.jsp\" class=\"mdl-layout__tab\">Ranking</a>\n");
       out.write("        </div>\n");
       out.write("      </header>\n");
       out.write("      <main class=\"mdl-layout__content\">\n");

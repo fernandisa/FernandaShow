@@ -14,7 +14,9 @@
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Gerenciamento de Sistemas</title>
-
+        <div>
+            <p> Admin- <a href="login.jsp?sair=ok">Sair</a> </p>
+        </div>
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="../images/touch/chrome-touch-icon-192x192.png">
