@@ -51,6 +51,7 @@ if(request.getParameter("txtEnunciado") == null ||request.getParameter("txtCerta
         obj.setEnunciado(enunciado);
         obj.setNivel(nivel);
         obj.setId(id);
+        
         // chamo a atualizar
 
 

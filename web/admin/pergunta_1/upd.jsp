@@ -108,14 +108,14 @@
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="txtCerta" value="<%=obj.getCerta()%>" required  id="txtNome" />
+                        <input class="mdl-textfield__input" type="text" name="txtCerta" value="<%=obj.getCerta()%>" required  />
                         <label class="mdl-textfield__label" for="txtCerta">Certa</label>
                     </div>
                 </div>
                 
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" name="txtNivel" value="<%=obj.getNivel()%>" required  id="txtNome" />
+                        <input class="mdl-textfield__input" type="text" name="txtNivel" value="<%=obj.getNivel()%>" required  />
                         <label class="mdl-textfield__label" for="txtNivel">Nível</label>
                     </div>
                 </div>
