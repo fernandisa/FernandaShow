@@ -100,7 +100,7 @@
                             %>
                             
                         </select>
-                        <label class="mdl-select__label" for="selCategoria">Exemplo Select</label>
+                       <label class="mdl-select__label" for="selCategoria">Exemplo Select</label>
                     </div>
                 </div>
                 <!-- 

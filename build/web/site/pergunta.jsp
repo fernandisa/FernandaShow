@@ -1,8 +1,17 @@
-<%-- 
-    Document   : pergunta
-    Created on : 21/03/2016, 15:37:13
-    Author     : marcelosiedler
---%>
+<%@page import="modelo.Pergunta"%>
+<%@page import="modelo.Jogo"%>
+<%
+   /*
+    *********QUANDO O JOGO COMEÇA
+    -Inicialzar o meu jogo
+    -Buscar a lista de perguntas
+    -Guardar o meu jogo na session
+    -Exibir a primeira pergunta na tela
+*/
+Jogo jogo = new Jogo();
+
+Pergunta pergunta = 
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

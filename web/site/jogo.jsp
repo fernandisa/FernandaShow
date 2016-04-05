@@ -1,6 +1,8 @@
+<%@page import="modelo.Pergunta"%>
 <%@page import="modelo.Jogador"%>
 <%
     Jogador jogador = (Jogador)session.getAttribute("jogador");
+    Pergunta pergunta = (Pergunta)session.getAttribute("pergunta");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,6 +16,9 @@
     <body>
         <div class="usuario">
         <%=jogador.getLogin()%>
+        </div>
+        <div class="usuario"> <%-- n sei se é usuário --%>
+        <%=pergunta.getId()%>
         </div>
         <div class="centralizar">
             <img src="img/show.png" alt=""/>
