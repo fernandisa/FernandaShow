@@ -14,7 +14,8 @@ Jogo jogo = new Jogo();
 PerguntaDAO pergDAO = new PerguntaDAO();
 List<Pergunta> lista = pergDAO.listar();
 jogo.setPerguntaList(lista);
-session.setAttribute("jogo", value);
+session.setAttribute("jogo", jogo);
+Pergunta pergunta = jogo.getPerguntaList().get(0);
 
 
 %>

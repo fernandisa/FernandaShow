@@ -52,10 +52,6 @@ public class Jogo {
     public Integer getErro()
     {
         Integer erro = 0;
-        if(this.pontuacao == 0)
-        {
-            erro = 1000;
-        }
         return erro;
     }
     
