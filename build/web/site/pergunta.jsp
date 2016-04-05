@@ -10,7 +10,7 @@
 */
 Jogo jogo = new Jogo();
 
-Pergunta pergunta = 
+
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
