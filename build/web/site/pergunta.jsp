@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="dao.PerguntaDAO"%>
 <%@page import="modelo.Pergunta"%>
 <%@page import="modelo.Jogo"%>
 <%
@@ -9,6 +11,10 @@
     -Exibir a primeira pergunta na tela
 */
 Jogo jogo = new Jogo();
+PerguntaDAO pergDAO = new PerguntaDAO();
+List<Pergunta> lista = pergDAO.listar();
+jogo.setPerguntaList(lista);
+session.setAttribute("jogo", value);
 
 
 %>
@@ -43,10 +49,10 @@ Jogo jogo = new Jogo();
         </div>
         <div class="painelUsuario">
             Siedler<br />
-            500 errar<br/>
+            <%=jogo.getErro()%> errar <br />
             1000 parar<br/>
             2000 acertar<br/>
-            
+            <%=jogo.getAcerto()%> acertar <br />
             
         </div>
         

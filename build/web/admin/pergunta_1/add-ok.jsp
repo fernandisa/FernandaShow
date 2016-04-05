@@ -5,7 +5,7 @@
 <%
  String msg="";
     
-    if(request.getParameter("txtEnunciado") == null ||request.getParameter("txtCerta") == null || request.getParameter("txtNivel") == null )
+    if(request.getParameter("txtEnunciado") == null ||request.getParameter("txtCerta") == null || request.getParameter("txtNivel") == null || request.getParameter("selCategoria") == null )
     {
         response.sendRedirect("list.jsp");
     }
