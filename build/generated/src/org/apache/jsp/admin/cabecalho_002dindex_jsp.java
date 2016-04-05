@@ -51,8 +51,8 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
       out.write("        <title>Gerenciamento de Sistemas</title>\n");
       out.write("         <div>\n");
-      out.write("              <p> Admin- <a href=\"login.jsp?sair=ok\">Sair</a> </p>\n");
-      out.write("          </div>\n");
+      out.write("             <p> Admin- <a href=\"login.jsp?sair=ok\">Sair</a> </p>\n");
+      out.write("         </div>\n");
       out.write("        <!-- Add to homescreen for Chrome on Android -->\n");
       out.write("        <meta name=\"mobile-web-app-capable\" content=\"yes\">\n");
       out.write("        <link rel=\"icon\" sizes=\"192x192\" href=\"images/touch/chrome-touch-icon-192x192.png\">\n");
