@@ -7,18 +7,7 @@
         msg = "Tentou fazer o login";
         String login = request.getParameter("txtEntrarLogin").toString();
         String senha = request.getParameter("txtEntrarSenha").toString();
-        if(login.equals("Admin") && senha.equals("Admin"))
-        {
-           //Crio a Sessão do usuário Admin
-           session.setAttribute("usuarioAdmin", login);
-           //redirecionar para a página inicial
-           response.sendRedirect("index.jsp");
-        }
-        else
-        {
-           msg = "Errou";
-        }
-    
+ 
     }
     if(request.getParameter("sair") != null)
     {
@@ -67,6 +56,8 @@
                 <input type="submit" value="Cadastrar" />
                 
             </form>
+            
+            <a href="instrucoes/list.jsp" class="mdl-layout__tab">Instruções</a>
         </div>
     </body>
 </html>

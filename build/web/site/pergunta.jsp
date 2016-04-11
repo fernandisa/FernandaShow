@@ -49,7 +49,7 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
             </div>
         </div>
         <div class="painelUsuario">
-            Siedler<br />
+            <br />
             <%=jogo.getErro()%> errar <br />
             1000 parar<br/>
             2000 acertar<br/>
