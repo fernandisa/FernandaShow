@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/web/admin/login.jsp</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/web/admin/cabecalho.jsp</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/web/admin/cabecalho-index.jsp</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/src/java/modelo/Jogo.java</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/src/java/modelo/Pergunta.java</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/web/site/jogo.jsp</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/FernandaShow/web/site/pergunta.jsp</file>
         </group>
     </open-files>
 </project-private>
