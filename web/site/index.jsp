@@ -1,11 +1,30 @@
-<%-- 
-    Document   : index
-    Created on : 21/03/2016, 15:33:51
-    Author     : marcelosiedler
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%
+    String msg = "";
+    if (request.getParameter("txtEntrarLogin")!=null &&
+            request.getParameter("txtEntrarSenha")!=null)
+    {
+        msg = "Tentou fazer o login";
+        String login = request.getParameter("txtEntrarLogin").toString();
+        String senha = request.getParameter("txtEntrarSenha").toString();
+        if(login.equals("Admin") && senha.equals("Admin"))
+        {
+           //Crio a Sessão do usuário Admin
+           session.setAttribute("usuarioAdmin", login);
+           //redirecionar para a página inicial
+           response.sendRedirect("index.jsp");
+        }
+        else
+        {
+           msg = "Errou";
+        }
+    
+    }
+    if(request.getParameter("sair") != null)
+    {
+        session.setAttribute("usuarioAdmin", null);
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,7 +54,7 @@
             </div>
             <h4>Cadastre-se</h4>
             
-            <form action="index.jsp" method="post">
+            <form action="jogcadastrarok.jsp" method="post">
                 <label>Login:</label>
                 <input type="text" name="txtCadastrarLogin"
                        /><br/>

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 import java.util.List;
@@ -40,6 +35,7 @@ public class Jogo {
     public void setPulos(Integer pulos) {
         this.pulos = pulos;
     }
+    
     public Integer getAcerto()
     {
         Integer acerto = 0;
@@ -49,6 +45,7 @@ public class Jogo {
         }
         return acerto;
     }
+    
     public Integer getErro()
     {
         Integer erro = 0;

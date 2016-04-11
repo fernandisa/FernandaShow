@@ -3,13 +3,21 @@ package org.apache.jsp.admin;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import modelo.Jogador;
+import dao.JogadorDAO;
 
-public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/admin/cabecalho-index.jsp");
+    _jspx_dependants.add("/admin/rodape-index.jsp");
+  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -41,6 +49,8 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\n');
+      out.write('\n');
       out.write("<!doctype html>\n");
       out.write("\n");
       out.write("<html lang=\"pt-br\">\n");
@@ -77,7 +87,6 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("              rel=\"stylesheet\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"mdl/material.min.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"mdl/styles.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"mdl/formulario.css\">\n");
       out.write("       \n");
       out.write("    </head>\n");
       out.write("    \n");
@@ -103,6 +112,75 @@ public final class cabecalho_002dindex_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <div class=\"mdl-layout__tab-panel is-active\" id=\"overview\">\n");
       out.write("<script src=\"mdl/material.min.js\"></script>\n");
       out.write("<script src=\"mdl/jquery-2.1.4.min.js\"></script>");
+      out.write('\n');
+
+    String mensagem = "";
+        if(request.getParameter("txtEntrarLogin")!=null &&
+                request.getParameter("txtEntrarSenha")!=null)
+        {
+            JogadorDAO dao = new JogadorDAO();
+            Jogador jogador;
+            String login = request.getParameter("txtEntrarLogin");
+            String senha = request.getParameter("txtEntrarSenha");
+            
+            jogador = dao.realizarLogin(login, senha);
+            if(jogador !=null)
+            {
+                session.setAttribute("jogador",jogador);
+            }
+            else
+            { 
+                mensagem = "Login not OK";
+            }
+            out.print(mensagem);
+        }
+    
+      out.write("\n");
+      out.write("    \n");
+      out.write("<section class=\"section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp\">\n");
+      out.write("    <div class=\"mdl-card mdl-cell mdl-cell--12-col\">\n");
+      out.write("        <div class=\"mdl-card__supporting-text\">\n");
+      out.write("            <h4>Gerenciamento do Sistema</h4>\n");
+      out.write("            A verdadeira arte de viajar...\n");
+      out.write("A gente sempre deve sair à rua como quem foge de casa,\n");
+      out.write("Como se estivessem abertos diante de nós todos os caminhos do mundo.\n");
+      out.write("Não importa que os compromissos, as obrigações, estejam ali...\n");
+      out.write("Chegamos de muito longe, de alma aberta e o coração cantando!\n");
+      out.write("<br/>\n");
+      out.write("Viajar: a melhor forma de se perder e de se encontrar ao mesmo tempo.\n");
+      out.write("        </div>\n");
+      out.write("\n");
+      out.write("    </div>\n");
+      out.write("\n");
+      out.write("</section>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write(" \n");
+      out.write("<section class=\"section--footer mdl-color--white mdl-grid\">\n");
+      out.write("\n");
+      out.write("</section>\n");
+      out.write("</div>\n");
+      out.write("<div class=\"mdl-layout__tab-panel\" id=\"features\">\n");
+      out.write("    <section class=\"section--center mdl-grid mdl-grid--no-spacing\">\n");
+      out.write("\n");
+      out.write("    </section>\n");
+      out.write("</div>\n");
+      out.write("\n");
+      out.write("<footer class=\"mdl-mega-footer\">\n");
+      out.write("    <div class=\"mdl-mega-footer--middle-section\">\n");
+      out.write("        Copyright © 2016 FeCarvalho Inc. Todos os direitos reservados.\n");
+      out.write("     </div>\n");
+      out.write("</footer>\n");
+      out.write("</main>\n");
+      out.write("</div>\n");
+      out.write("<script src=\"mdl/material.min.js\"></script>\n");
+      out.write("<script src=\"mdl/jquery-2.1.4.min.js\"></script>\n");
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
