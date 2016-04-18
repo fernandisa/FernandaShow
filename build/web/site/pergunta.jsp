@@ -11,6 +11,7 @@
     -Exibir a primeira pergunta na tela 
 */
    //Verificar se diferencia o botão que eu cliquei
+   Jogo jogo = new Jogo();
    if(request.getParameter("nameConfirmar")!= null)
    {
        out.print("Foi o confirmar!");
@@ -29,17 +30,18 @@
            }
            else 
            {
-               // Trecho executado quando eu acesso o jogo pela primera vez
-               // Pergunta 01   
-               Jogo jogo = new Jogo();
-               PerguntaDAO pergDAO = new PerguntaDAO();
-               List<Pergunta> lista = pergDAO.listar();
-               jogo.setPerguntaList(lista);
-               // Até aqui - pela primera vez
+               jogo.iniciar();
            }
        }
    }
    
+   // Trecho executado quando eu acesso o jogo pela primera vez
+   // Pergunta 01   
+   
+   PerguntaDAO pergDAO = new PerguntaDAO();
+   List<Pergunta> lista = pergDAO.listar();
+   jogo.setPerguntaList(lista);
+   // Até aqui - pela primera vez
    
 session.setAttribute("jogo", jogo);
 Pergunta pergunta = jogo.getPerguntaList().get(0);
