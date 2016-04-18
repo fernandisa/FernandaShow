@@ -8,16 +8,41 @@
     -Inicialzar o meu jogo
     -Buscar a lista de perguntas
     -Guardar o meu jogo na session
-    -Exibir a primeira pergunta na tela
+    -Exibir a primeira pergunta na tela 
 */
-Jogo jogo = new Jogo();
-PerguntaDAO pergDAO = new PerguntaDAO();
-List<Pergunta> lista = pergDAO.listar();
-jogo.setPerguntaList(lista);
+   //Verificar se diferencia o botão que eu cliquei
+   if(request.getParameter("nameConfirmar")!= null)
+   {
+       out.print("Foi o confirmar!");
+   }
+   else
+   {
+       if(request.getParameter("namePular")!= null)
+       {
+           out.print("Foi o pular!");
+       }
+       else
+       {
+           if(request.getParameter("nameParar")!= null)
+           {
+               out.print("Foi o parar!");
+           }
+           else 
+           {
+               // Trecho executado quando eu acesso o jogo pela primera vez
+               // Pergunta 01   
+               Jogo jogo = new Jogo();
+               PerguntaDAO pergDAO = new PerguntaDAO();
+               List<Pergunta> lista = pergDAO.listar();
+               jogo.setPerguntaList(lista);
+               // Até aqui - pela primera vez
+           }
+       }
+   }
+   
+   
 session.setAttribute("jogo", jogo);
 Pergunta pergunta = jogo.getPerguntaList().get(0);
-
-
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -32,7 +57,7 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
         <div class="pergunta">
             <h4 class="enunciado">Quem foi o primeiro apresentador do SBT?</h4>
             <div class="opcoes">
-                <form action="fim.jsp" method="post">
+                <form action="pergunta.jsp" method="post">
                     <input type="radio" value="A" name="rdoPergunta" />
                     Silvio Santos<br/>
                     <input type="radio" value="B" name="rdoPergunta" />
@@ -42,9 +67,9 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
                     <input type="radio" value="D" name="rdoPergunta" />
                     Roberto Bolaños<br/>
                     <hr/>
-                    <input type="submit" value="confirmar" />
-                     <input type="submit" value="pular" />(3)
-                      <input type="submit" value="parar" />
+                    <input type="submit" value="confirmar" name="nameConfirmar" />
+                     <input type="submit" value="pular" name="namePular" />(3)
+                      <input type="submit" value="parar" name="nameParar" />
                 </form>
             </div>
         </div>

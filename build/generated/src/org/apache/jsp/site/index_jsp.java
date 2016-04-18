@@ -50,18 +50,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         msg = "Tentou fazer o login";
         String login = request.getParameter("txtEntrarLogin").toString();
         String senha = request.getParameter("txtEntrarSenha").toString();
-        if(login.equals("Admin") && senha.equals("Admin"))
-        {
-           //Crio a Sessão do usuário Admin
-           session.setAttribute("usuarioAdmin", login);
-           //redirecionar para a página inicial
-           response.sendRedirect("index.jsp");
-        }
-        else
-        {
-           msg = "Errou";
-        }
-    
+ 
     }
     if(request.getParameter("sair") != null)
     {
@@ -111,6 +100,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <input type=\"submit\" value=\"Cadastrar\" />\n");
       out.write("                \n");
       out.write("            </form>\n");
+      out.write("            \n");
+      out.write("            <a href=\"instrucoes/list.jsp\" class=\"mdl-layout__tab\">Instruções</a>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
