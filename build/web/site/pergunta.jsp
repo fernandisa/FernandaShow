@@ -10,23 +10,37 @@
     -Guardar o meu jogo na session
     -Exibir a primeira pergunta na tela 
 */
-   //Verificar se diferencia o botão que eu cliquei
-   Jogo jogo = new Jogo();
+   Jogo jogo;
+   //verificar se já tem jogo sendo jogado, senão inicia um novo jogo.
+   if(session.getAttribute("jogo")!= null)
+   {
+       jogo = (Jogo)session.getAttribute("jogo");
+   }
+   else
+   {
+       jogo = new Jogo();
+   }
+   
    if(request.getParameter("nameConfirmar")!= null)
    {
-       out.print("Foi o confirmar!");
+       String opcaomarcada = request.getParameter("rdoPergunta");
+       // verificar se acertou ou errou
+       if(! jogo.confirmar(opcaomarcada))
+       {
+           response.sendRedirect("fim.jsp");
+       }
    }
    else
    {
        if(request.getParameter("namePular")!= null)
        {
-           out.print("Foi o pular!");
+           jogo.pular();
        }
        else
        {
            if(request.getParameter("nameParar")!= null)
            {
-               out.print("Foi o parar!");
+               response.sendRedirect("fim.jsp");
            }
            else 
            {
@@ -34,14 +48,6 @@
            }
        }
    }
-   
-   // Trecho executado quando eu acesso o jogo pela primera vez
-   // Pergunta 01   
-   
-   PerguntaDAO pergDAO = new PerguntaDAO();
-   List<Pergunta> lista = pergDAO.listar();
-   jogo.setPerguntaList(lista);
-   // Até aqui - pela primera vez
    
 session.setAttribute("jogo", jogo);
 Pergunta pergunta = jogo.getPerguntaList().get(0);
@@ -57,20 +63,20 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
     </head>
     <body>
         <div class="pergunta">
-            <h4 class="enunciado">Quem foi o primeiro apresentador do SBT?</h4>
+            <h4 class="enunciado"><%=pergunta.getEnunciado()%>?</h4>
             <div class="opcoes">
                 <form action="pergunta.jsp" method="post">
                     <input type="radio" value="A" name="rdoPergunta" />
-                    Silvio Santos<br/>
+                    <%=pergunta.getA()%>?<br/>
                     <input type="radio" value="B" name="rdoPergunta" />
-                    Carlos Alberto de Nogrega<br/>
+                    <%=pergunta.getB()%>?<br/>
                     <input type="radio" value="C" name="rdoPergunta" />
-                    Gugu<br/>
+                    <%=pergunta.getC()%>?<br/>
                     <input type="radio" value="D" name="rdoPergunta" />
-                    Roberto Bolaños<br/>
+                    <%=pergunta.getD()%>?<br/>
                     <hr/>
                     <input type="submit" value="confirmar" name="nameConfirmar" />
-                     <input type="submit" value="pular" name="namePular" />(3)
+                     <input type="submit" value="pular" name="namePular" /><%=jogo.getPulos()%>
                       <input type="submit" value="parar" name="nameParar" />
                 </form>
             </div>
@@ -79,7 +85,6 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
             <br />
             <%=jogo.getErro()%> errar <br />
             1000 parar<br/>
-            2000 acertar<br/>
             <%=jogo.getAcerto()%> acertar <br />
             
         </div>

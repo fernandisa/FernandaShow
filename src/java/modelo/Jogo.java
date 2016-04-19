@@ -58,6 +58,7 @@ public class Jogo {
     {
         try {
             PerguntaDAO dao = new PerguntaDAO();
+            this.setPerguntaList(dao.listar());
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(Jogo.class.getName()).log(Level.SEVERE, null, ex);
         }
