@@ -1,8 +1,21 @@
 <%@page import="modelo.Pergunta"%>
 <%@page import="modelo.Jogador"%>
 <%
+    //atribui o valor da sessão jogador ao objeto da página
+    Jogador jogador = new Jogador();
+    if(session.getAttribute("jogador") == null)
+    {
+        if(request.getParameter("jogador") !=null)
+        {
+             jogador = new Jogador();
+            jogador.setLogin("anônimo");
+        }
+    }
+    else
+    {
+         jogador = (Jogador)session.getAttribute("jogador");
+    }
     
-   // Jogador jogador = (Jogador)session.getAttribute("jogador");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +28,7 @@
     </head>
     <body>
         <div class="usuario">
-            <%//=jogador.getLogin()%> 
+            <%=jogador.getLogin()%> 
         </div>
         
         <div class="centralizar">
