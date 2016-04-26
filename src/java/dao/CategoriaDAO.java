@@ -28,7 +28,7 @@ public class CategoriaDAO {
             em.getTransaction().rollback();
             throw e;
         } finally {
-            em.close();
+            em.close();  // independente de ele der erro ou não, ele irá finalizar.. nesse caso, fechará a conexão com o BD
             
         }
         
