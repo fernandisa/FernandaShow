@@ -71,7 +71,7 @@ public class CategoriaDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
         } finally {
-            em.close();
+           // em.close();
         }
     }
     public Categoria buscarPorChavePrimaria (Integer chave)
@@ -80,6 +80,7 @@ public class CategoriaDAO {
     }
 
     public void fechaEmf() {
+        em.close();
         Conexao.closeConexao();
     }
     
