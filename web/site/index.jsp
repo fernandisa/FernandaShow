@@ -1,19 +1,34 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.Jogador"%>
+<%@page import="dao.JogadorDAO"%>
 <%
+    //Tentativa de login
     String msg = "";
-    if (request.getParameter("txtEntrarLogin")!=null &&
+    if(request.getParameter("txtEntrarLogin")!=null &&
             request.getParameter("txtEntrarSenha")!=null)
     {
-        msg = "Tentou fazer o login";
-        String login = request.getParameter("txtEntrarLogin").toString();
-        String senha = request.getParameter("txtEntrarSenha").toString();
- 
-    }
-    if(request.getParameter("sair") != null)
-    {
-        session.setAttribute("usuarioAdmin", null);
+        JogadorDAO dao = new JogadorDAO();
+        Jogador jogador; //variável com o usuário logado
+        String login = request.getParameter("txtEntrarLogin");
+        String senha = request.getParameter("txtEntrarSenha");
+        
+        jogador = dao.realizarLogin(login, senha);
+        if(jogador !=null)
+        {
+            //criar uma Sessão para o jogador
+            //vou pra tela inicial do jogo
+            session.setAttribute("jogador", jogador);
+            //vou para tela de jogo
+            response.sendRedirect("jogo.jsp");
+        }
+        else
+        {
+            msg = "Login errado";
+        }
+       
     }
 %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,23 +56,8 @@
                 ou
                 <hr/>
             </div>
-            <h4>Cadastre-se</h4>
+            <a href="cadastrar.jsp"><h4>Cadastre-se</h4></a>
             
-            <form action="jogcadastrarok.jsp" method="post">
-                <label>Login:</label>
-                <input type="text" name="txtCadastrarLogin"
-                       /><br/>
-                <label>Senha</label>
-                <input type="text" name="txtCadastrarSenha"
-                       /><br/>
-                <label>Email</label>
-                <input type="text" name="txtCadastrarEmail"
-                       /><br/>
-                <input type="submit" value="Cadastrar" />
-                
-            </form>
-            
-            <a href="instrucoes/list.jsp" class="mdl-layout__tab">Instruções</a>
-        </div>
+            </div>
     </body>
 </html>

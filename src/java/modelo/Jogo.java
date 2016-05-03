@@ -1,6 +1,5 @@
 package modelo;
 
-import com.sun.istack.internal.logging.Logger;
 import dao.PerguntaDAO;
 import java.util.List;
 import java.util.logging.Level;

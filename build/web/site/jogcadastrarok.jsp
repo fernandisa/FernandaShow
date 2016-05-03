@@ -2,8 +2,8 @@
 <%@page import="modelo.Jogador"%>
 <%
 String msg = "";
-    if (request.getParameter("txtEntrarLogin")!=null &&
-            request.getParameter("txtEntrarSenha")!=null)
+    if (request.getParameter("txtCadastrarLogin")!=null &&
+            request.getParameter("txtCadastrarSenha")!=null || request.getParameter("txtCadastrarEmail") !=null)
     {
         response.sendRedirect("index.jsp");
     }
@@ -12,7 +12,7 @@ String msg = "";
         String login = request.getParameter("txtCadastrarLogin").toString();
         String senha = request.getParameter("txtCadastrarSenha").toString();
         String email = request.getParameter("txtCadastrarEmail").toString();
-      //Chamar a inclus„o da DAO
+      //Chamar a inclus√£o da DAO
         JogadorDAO dao = new JogadorDAO();
         Jogador obj = new Jogador();
         
@@ -36,22 +36,39 @@ String msg = "";
     
     
     
-//txtnome È o NAME que eu coloquei no input na tela 
+//txtnome √© o NAME que eu coloquei no input na tela 
 //anterior
 String login = request.getParameter("txtCadastrarLogin");
 %>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-    <div class="mdl-card mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__supporting-text ">
-            <h4>Jogador - Cadastrar</h4>
-            <%=msg%>.<br />
-            Login:<%=login%><br />
-            <a href="index.jsp"><i class="material-icons">Index</i></a>
-            
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Show do Milh√£o</title>
+        <link rel="stylesheet" href="css/estilo.css"/>
+    </head>
+    <body>
+        <div class="centralizar">
+            <img src="img/show.png" alt=""/>
         </div>
-
-    </div>
-
-</section>
-
+        <div class="inicialformulario">
+            <h4>Cadastre-se</h4>
+            
+            <form action="index.jsp" method="post">
+                <label>Login:</label>
+                <input type="text" name="txtCadastrarLogin"
+                       /><br/>
+                <label>Senha</label>
+                <input type="text" name="txtCadastrarSenha"
+                       /><br/>
+                <label>Email</label>
+                <input type="text" name="txtCadastrarEmail"
+                       /><br/>
+                <input type="submit" value="Cadastrar" />
+                
+            </form>
+        </div>
+        </body>
+</html>
 
