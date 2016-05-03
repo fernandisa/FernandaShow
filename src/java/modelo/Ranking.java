@@ -29,6 +29,7 @@ import javax.persistence.TemporalType;
 @Table(name = "ranking")
 @NamedQueries({
     @NamedQuery(name = "Ranking.findAll", query = "SELECT r FROM Ranking r")})
+    @NamedQuery(name = "Ranking.findByName", query = "SELECT r FROM Ranking r where r.nome like :nome")
 public class Ranking implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -107,7 +108,7 @@ public class Ranking implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Ranking[ id=" + id + " ]";
+        return "Id: " + id +  " Jogador: " + jogador + " Pontos: " + pontos;
     }
     
 }
