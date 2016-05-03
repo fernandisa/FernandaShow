@@ -48,7 +48,7 @@ public class JogadorDAO {
         catch (Exception e) {
             jogador = null;
         }
-            return null;
+            return jogador; // mudei de null pra jogador
     }
     
     public List<Jogador> listar() throws Exception {
