@@ -12,6 +12,8 @@
         String senha = request.getParameter("txtEntrarSenha");
         
         jogador = dao.realizarLogin(login, senha);
+        dao.fechaEmf();
+        
         if(jogador !=null)
         {
             //criar uma Sessão para o jogador
@@ -57,7 +59,20 @@
                 <hr/>
             </div>
             <a href="cadastrar.jsp"><h4>Cadastre-se</h4></a>
-            
-            </div>
+           <h4>Cadastre-se</h4>
+            <form action="index.jsp" method="post">
+                <label>Login:</label>
+                <input type="text" name="txtCadastrarLogin"
+                       /><br/>
+                <label>Senha</label>
+                <input type="text" name="txtCadastrarSenha"
+                       /><br/>
+                <label>Email</label>
+                <input type="text" name="txtCadastrarEmail"
+                       /><br/>
+                <input type="submit" value="Cadastrar" />
+                
+            </form>
+        </div>
     </body>
 </html>
