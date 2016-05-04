@@ -1,6 +1,27 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.Date"%>
+<%@page import="modelo.Jogador"%>
+<%@page import="modelo.Ranking"%>
+<%@page import="modelo.Jogo"%>
 <%@page import="dao.RankingDAO"%>
 <%
+    Jogo jogo = (Jogo) session.getAttribute("jogo");
+    
+    Ranking r = new Ranking();
+    Jogador jogador = (Jogador) session.getAttribute("jogador");
+    Date d = new Date();
+   
+    r.setPontos(jogo.getPontuacao());
+    r.setJogador(jogador);
+    r.setData(d);
+    
     RankingDAO dao = new RankingDAO();
+    
+    dao.incluir(r);
+    List<Ranking> lista;
+    lista = dao.listarTop();
+    
+    dao.fechaEmf();
 
 
 %>
@@ -18,10 +39,18 @@
         <hr />
         <h4>TOP 10</h4>
         
+         <table>
+
+            <%
+               for(Ranking item : lista) {
+            %>
+           
         <ol>
-            <li><%=dao.listarTop()%></li>
+            <li><%=item.getPontos()%> - <%=item.getJogador()%><li> 
         </ol>
-        
-        
+        <%
+            }
+        %>
+        </table>
     </body>
 </html>
