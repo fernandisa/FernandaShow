@@ -32,7 +32,7 @@
         </div>
         
         <div class="centralizar">
-            <img src="img/show.png" alt=""/>
+            <img src="img/show.gif" alt=""/>
             <br/>
             
             <a href="pergunta.jsp">Iniciar Jogo</a>

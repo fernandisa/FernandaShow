@@ -39,7 +39,7 @@
     </head>
     <body>
         <div class="centralizar">
-            <img src="img/show.png" alt=""/>
+            <img src="img/show.gif" alt=""/>
         </div>
         <div class="inicialformulario">
             <h4>Entrar</h4>
