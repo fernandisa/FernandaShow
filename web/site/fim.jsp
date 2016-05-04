@@ -19,7 +19,7 @@
     
     dao.incluir(r);
     List<Ranking> lista;
-    lista = dao.listarTop();
+    lista = dao.listarTop(); // erro aqui
     
     dao.fechaEmf();
 
