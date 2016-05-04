@@ -42,7 +42,7 @@
             <img src="img/show.gif" alt=""/>
         </div>
         <div class="inicialformulario">
-            <h4>Entrar</h4>
+            <h4 class ="index">Entrar</h4>
             <form action="index.jsp" method="post">
                 <label>Login:</label>
                 <input type="text" name="txtEntrarLogin"
