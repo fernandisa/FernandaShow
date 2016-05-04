@@ -1,9 +1,9 @@
-<%-- 
-    Document   : fim
-    Created on : 21/03/2016, 15:37:29
-    Author     : marcelosiedler
---%>
+<%@page import="dao.RankingDAO"%>
+<%
+    RankingDAO dao = new RankingDAO();
 
+
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,17 +17,9 @@
         <a href="jogo.jsp">Jogar novamente</a>
         <hr />
         <h4>TOP 10</h4>
+        
         <ol>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
-            <li>Lombardi</li>
+            <li><%=dao.listarTop()%></li>
         </ol>
         
         
