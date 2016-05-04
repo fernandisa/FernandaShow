@@ -52,7 +52,7 @@
    
 session.setAttribute("jogo", jogo);
 Jogador jogador = (Jogador)session.getAttribute("jogador"); 
-Pergunta pergunta = jogo.getPerguntaList().get(0);
+Pergunta pergunta = jogo.getPerguntaList().get(0); // qndo eu acerto todas as perguntas, ela cai aqui
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -83,7 +83,7 @@ public class RankingDAO {
     }
     
     public void fechaEmf() {
-        
+        em.close();
         Conexao.closeConexao();
         
     }

@@ -19,7 +19,7 @@
     
     dao.incluir(r);
     List<Ranking> lista;
-    lista = dao.listarTop(); // erro aqui
+    lista = dao.listarTop(); // erro aqui quando eu erro alguma das perguntas
     
     dao.fechaEmf();
 
