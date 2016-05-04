@@ -42,12 +42,14 @@
          <table>
 
             <%
-               for(Ranking item : lista) {
+               for (int i = 0; i < lista.size(); i++) {
             %>
            
-        <ol>
-            <li><%=item.getPontos()%> - <%=item.getJogador()%><li> 
-        </ol>
+        <tr>
+            <th><%=i + 1%></th>
+            <th><%=lista.get(i).getJogador()%></th>
+            <th><%=lista.get(i).getPontos()%></th>
+        </tr>>
         <%
             }
         %>

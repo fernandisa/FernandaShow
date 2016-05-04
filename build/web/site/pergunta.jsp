@@ -51,8 +51,8 @@
    }
    
 session.setAttribute("jogo", jogo);
-Pergunta pergunta = jogo.getPerguntaList().get(0);
 Jogador jogador = (Jogador)session.getAttribute("jogador"); 
+Pergunta pergunta = jogo.getPerguntaList().get(0);
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
