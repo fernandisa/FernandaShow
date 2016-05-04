@@ -1,3 +1,4 @@
+<%@page import="modelo.Jogador"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.PerguntaDAO"%>
 <%@page import="modelo.Pergunta"%>
@@ -51,6 +52,7 @@
    
 session.setAttribute("jogo", jogo);
 Pergunta pergunta = jogo.getPerguntaList().get(0);
+Jogador jogador = (Jogador)session.getAttribute("jogador"); 
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -67,13 +69,13 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
             <div class="opcoes">
                 <form action="pergunta.jsp" method="post">
                     <input type="radio" value="A" name="rdoPergunta" />
-                    <%=pergunta.getA()%>?<br/>
+                    <%=pergunta.getA()%><br/>
                     <input type="radio" value="B" name="rdoPergunta" />
-                    <%=pergunta.getB()%>?<br/>
+                    <%=pergunta.getB()%><br/>
                     <input type="radio" value="C" name="rdoPergunta" />
-                    <%=pergunta.getC()%>?<br/>
+                    <%=pergunta.getC()%><br/>
                     <input type="radio" value="D" name="rdoPergunta" />
-                    <%=pergunta.getD()%>?<br/>
+                    <%=pergunta.getD()%><br/>
                     <hr/>
                     <input type="submit" value="confirmar" name="nameConfirmar" />
                      <input type="submit" value="pular" name="namePular" /><%=jogo.getPulos()%>
@@ -82,11 +84,10 @@ Pergunta pergunta = jogo.getPerguntaList().get(0);
             </div>
         </div>
         <div class="painelUsuario">
-            <br />
-            <%=jogo.getErro()%> errar <br />
-            1000 parar<br/>
-            <%=jogo.getAcerto()%> acertar <br />
-            
+            <%=jogador.getLogin()%><br />
+            <%=jogo.getErro()%> errar<br/>
+            <%=jogo.getPontuacao()%> parar<br/>
+            <%=jogo.getAcerto()%> acertar<br/>
         </div>
         
     </body>
