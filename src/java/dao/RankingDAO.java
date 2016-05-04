@@ -35,14 +35,11 @@ public class RankingDAO {
         return em.createNamedQuery("Ranking.findAll").getResultList();
        
     }
-    
-   public List<Ranking> listar(String nome) throws Exception {
-         TypedQuery<Ranking> query = 
-                 em.createNamedQuery("Ranking.findByName", Ranking.class);
-         
-         query.setParameter("nome", '%' + nome + '%');
-         return query.getResultList();
+     public List<Ranking> listarTop() throws Exception {
+        return em.createNamedQuery("Ranking.top").setMaxResults(10).getResultList();
+       
     }
+   
     
     public void alterar(Ranking obj) throws Exception {
        try {
