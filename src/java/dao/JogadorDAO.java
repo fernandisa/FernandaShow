@@ -28,7 +28,7 @@ public class JogadorDAO {
             em.getTransaction().rollback();
             throw e;
         } finally {
-            em.close();
+         //   em.close();
             
         }
         
@@ -74,7 +74,7 @@ public class JogadorDAO {
             em.getTransaction().rollback();
             throw e;
         } finally {
-            em.close();
+          //  em.close();
         }
     }
     
@@ -87,7 +87,7 @@ public class JogadorDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
         } finally {
-            em.close();
+           // em.close();
         }
     }
     public Jogador buscarPorChavePrimaria(String chave)

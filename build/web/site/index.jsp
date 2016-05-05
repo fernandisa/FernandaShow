@@ -41,7 +41,7 @@
         <div class="centralizar">
             <img src="img/show.gif" alt=""/>
         </div>
-        <div class="inicialformulario">
+        <div id="testeindex" class="inicialformulario">
             <h4 class ="index">Entrar</h4>
             <form action="index.jsp" method="post">
                 <label>Login:</label>

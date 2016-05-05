@@ -28,7 +28,7 @@ public class PerguntaDAO {
             em.getTransaction().rollback();
             throw e;
         } finally {
-            em.close();
+            //em.close();
             
         }
         
@@ -58,7 +58,7 @@ public class PerguntaDAO {
             em.getTransaction().rollback();
             throw e;
         } finally {
-            em.close();
+            //em.close();
         }
     }
     
@@ -71,7 +71,7 @@ public class PerguntaDAO {
         } catch (RuntimeException e) {
             em.getTransaction().rollback();
         } finally {
-            em.close();
+            //em.close();
         }
     }
 public Pergunta buscarPorChavePrimaria(Integer chave)
