@@ -87,7 +87,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"centralizar\">\n");
       out.write("            <img src=\"img/show.gif\" alt=\"\"/>\n");
       out.write("        </div>\n");
-      out.write("        <div class=\"inicialformulario\">\n");
+      out.write("        <div id=\"testeindex\" class=\"inicialformulario\">\n");
       out.write("            <h4 class =\"index\">Entrar</h4>\n");
       out.write("            <form action=\"index.jsp\" method=\"post\">\n");
       out.write("                <label>Login:</label>\n");
