@@ -1,4 +1,4 @@
-.cetralizar
+.centralizar
 {
     text-align: center;
     margin:15px;
@@ -31,6 +31,12 @@ h2
     padding-left: 10px;
     
 }
-
-
-
+#testeindex
+{
+    text-align: center;
+    color:#0091ea;
+}
+title
+{
+    color:#0091ea;
+}
