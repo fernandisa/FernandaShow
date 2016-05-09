@@ -76,7 +76,9 @@ Pergunta pergunta = jogo.getPerguntaList().get(0); // qndo eu acerto todas as pe
                     <%=pergunta.getC()%><br/>
                     <input type="radio" value="D" name="rdoPergunta" />
                     <%=pergunta.getD()%><br/>
-                    <hr/>
+                    <!-- Accent-colored raised button with ripple -->
+            <a href="#">Submit</a><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Confirmar</button></a>
+
                     <input type="submit" value="confirmar" name="nameConfirmar" />
                      <input type="submit" value="pular" name="namePular" /><%=jogo.getPulos()%>
                       <input type="submit" value="parar" name="nameParar" />
