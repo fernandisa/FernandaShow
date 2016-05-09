@@ -78,8 +78,12 @@ Pergunta pergunta = jogo.getPerguntaList().get(0); // qndo eu acerto todas as pe
                     <%=pergunta.getD()%><br/>
                     <!-- Accent-colored raised button with ripple -->
                     
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Confirmar</button></a>
-                
+            <!-- Colored raised button -->
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+Confirmar
+</button>
+
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" value="confirmar" name="nameConfirmar">Click me</button>
                     <input type="submit" value="confirmar" name="nameConfirmar" />
                      <input type="submit" value="pular" name="namePular" /><%=jogo.getPulos()%>
                       <input type="submit" value="parar" name="nameParar" />
