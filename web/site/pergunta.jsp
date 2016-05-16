@@ -39,15 +39,17 @@
        }
        else
        {
-           if(request.getParameter("nameParar")!= null)
-           {
-               response.sendRedirect("fim.jsp");
-           }
-           else 
-           {
+           
+           
                jogo.iniciar();
-           }
+           
        }
+   }
+   
+   if( jogo.getPerguntaList().size()==0)
+   {
+               response.sendRedirect("fim.jsp");
+               return;
    }
    
 session.setAttribute("jogo", jogo);
